@@ -1,0 +1,5 @@
+/vendor/
+/.buildpath
+/.project
+/demo.php
+/.settings/
