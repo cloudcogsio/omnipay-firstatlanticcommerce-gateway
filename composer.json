@@ -19,7 +19,7 @@
 	"minimum-stability" : "dev",
 	"require" : {
 		"omnipay/common" : "3.0.5",
-		"guzzlehttp/psr7" : "1.7.0",
+		"guzzlehttp/psr7" : "1.x-dev",
 		"league/iso3166" : "3.0.0",
 		"php-http/guzzle7-adapter" : "dev-master"
 	},
