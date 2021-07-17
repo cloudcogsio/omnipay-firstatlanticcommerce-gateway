@@ -3,10 +3,8 @@ namespace Omnipay\FirstAtlanticCommerce;
 
 use Omnipay\Common\AbstractGateway;
 use Omnipay\FirstAtlanticCommerce\Exception\MethodNotSupported;
-use Zend\Http\Client as ZendHTTPClient;
 use Omnipay\Common\Http\ClientInterface;
 use Symfony\Component\HttpFoundation\Request as HttpRequest;
-use Omnipay\Common\Http\Client;
 use Omnipay\FirstAtlanticCommerce\Message\TransactionModification;
 use Omnipay\FirstAtlanticCommerce\Support\TransactionCode;
 
@@ -23,15 +21,7 @@ implements \Omnipay\FirstAtlanticCommerce\Support\FACParametersInterface
 {
     public function __construct(ClientInterface $httpClient = null, HttpRequest $httpRequest = null)
     {
-        $ZendHTTPClient = new ZendHTTPClient(null,[
-            'timeout' => 60
-        ]);
-
-        $ZendClient = new \Http\Adapter\Zend\Client($ZendHTTPClient);
-
-        $httpClient= new Client($ZendClient);
-
-        parent::__construct($httpClient,$httpRequest);
+        parent::__construct(null,$httpRequest);
     }
 
     public function getName()
