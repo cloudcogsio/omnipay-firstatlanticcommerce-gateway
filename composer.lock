@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e502e2b7f93f0c45edee9b3f5e16fd49",
+    "content-hash": "3270ab91dbc07874840f6deb8e142eb0",
     "packages": [
         {
             "name": "clue/stream-filter",
@@ -606,16 +606,16 @@
         },
         {
             "name": "php-http/guzzle7-adapter",
-            "version": "1.0.0",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-http/guzzle7-adapter.git",
-                "reference": "fb075a71dbfa4847cf0c2938c4e5a9c478ef8b01"
+                "reference": "3b7f8f4cbfda35f5ef709cc18b48cc903aa7b328"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-http/guzzle7-adapter/zipball/fb075a71dbfa4847cf0c2938c4e5a9c478ef8b01",
-                "reference": "fb075a71dbfa4847cf0c2938c4e5a9c478ef8b01",
+                "url": "https://api.github.com/repos/php-http/guzzle7-adapter/zipball/3b7f8f4cbfda35f5ef709cc18b48cc903aa7b328",
+                "reference": "3b7f8f4cbfda35f5ef709cc18b48cc903aa7b328",
                 "shasum": ""
             },
             "require": {
@@ -633,10 +633,11 @@
                 "php-http/client-integration-tests": "^3.0",
                 "phpunit/phpunit": "^8.0|^9.3"
             },
+            "default-branch": true,
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "0.2.x-dev"
+                    "dev-master": "1.x-dev"
                 }
             },
             "autoload": {
@@ -662,9 +663,9 @@
             ],
             "support": {
                 "issues": "https://github.com/php-http/guzzle7-adapter/issues",
-                "source": "https://github.com/php-http/guzzle7-adapter/tree/1.0.0"
+                "source": "https://github.com/php-http/guzzle7-adapter/tree/master"
             },
-            "time": "2021-03-09T07:35:15+00:00"
+            "time": "2021-07-01T11:06:06+00:00"
         },
         {
             "name": "php-http/httplug",
@@ -1377,7 +1378,9 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "php-http/guzzle7-adapter": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],
