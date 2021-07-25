@@ -109,6 +109,16 @@ implements \Omnipay\FirstAtlanticCommerce\Support\FACParametersInterface
     {
         return $this->getParameter(Constants::CONFIG_KEY_FACPGNAM);
     }
+    
+    public function setMerchantResponseURL($url)
+    {
+        return $this->setParameter(Constants::CONFIG_KEY_MERCHANT_RESPONSE_URL, $url);
+    }
+    
+    public function getMerchantResponseURL()
+    {
+        return $this->getParameter(Constants::CONFIG_KEY_MERCHANT_RESPONSE_URL);
+    }
 
     public function authorize(array $options = []) : \Omnipay\Common\Message\AbstractRequest
     {
@@ -137,6 +147,9 @@ implements \Omnipay\FirstAtlanticCommerce\Support\FACParametersInterface
 
     public function purchase(array $options = [])
     {
+        // Force 3DS
+        $options[Constants::AUTHORIZE_OPTION_3DS] = true;
+        
         if(array_key_exists('transactionCode', $options) && !($options['transactionCode'])->hasCode(TransactionCode::SINGLE_PASS))
         {
             ($options['transactionCode'])->addCode(TransactionCode::SINGLE_PASS);
@@ -178,6 +191,11 @@ implements \Omnipay\FirstAtlanticCommerce\Support\FACParametersInterface
     public function fetchTransaction(array $options = [])
     {
         return $this->createRequest("\Omnipay\FirstAtlanticCommerce\Message\TransactionStatus", $options);
+    }
+    
+    public function acceptNotification(array $options = [])
+    {
+        return $this->createRequest("\Omnipay\FirstAtlanticCommerce\Message\AcceptNotification", $options);
     }
 
     //TODO Add support for PAN Tokenization

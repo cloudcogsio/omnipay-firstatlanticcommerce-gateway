@@ -135,12 +135,12 @@ class Authorize extends AbstractRequest
                     break;
 
                 case "C":
-                    if (empty($field)) $TransactionDetails[$param] = "";
+                    if (empty($field)) $this->TransactionDetails[$param] = "";
 
                     break;
 
                 default:
-                    if (empty($field)) unset($TransactionDetails[$param]);
+                    if (empty($field)) unset($this->TransactionDetails[$param]);
                     break;
             }
 

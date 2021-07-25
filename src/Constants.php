@@ -18,6 +18,7 @@ class Constants
     const CONFIG_KEY_FACCUR = 'facCurrencyList';
     const CONFIG_KEY_FACPGSET = 'facPageSet';
     const CONFIG_KEY_FACPGNAM = 'facPageName';
+    const CONFIG_KEY_MERCHANT_RESPONSE_URL = 'merchantResponseURL';
 
     const AUTHORIZE_OPTION_3DS = '3DS';
     const AUTHORIZE_OPTION_HOSTED_PAGE = 'HPA';
