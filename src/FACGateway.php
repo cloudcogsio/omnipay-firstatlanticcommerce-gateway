@@ -112,6 +112,7 @@ implements \Omnipay\FirstAtlanticCommerce\Support\FACParametersInterface
     
     public function setMerchantResponseURL($url)
     {
+        $this->setReturnUrl($url);
         return $this->setParameter(Constants::CONFIG_KEY_MERCHANT_RESPONSE_URL, $url);
     }
     
@@ -195,7 +196,23 @@ implements \Omnipay\FirstAtlanticCommerce\Support\FACParametersInterface
     
     public function acceptNotification(array $options = [])
     {
+        if (!array_key_exists("FacPwd", $options))
+        {
+            $options = array_merge($options,['FacPwd' => $this->getFacPwd()]);
+        }
+        
         return $this->createRequest("\Omnipay\FirstAtlanticCommerce\Message\AcceptNotification", $options);
+    }
+    
+    public function setReturnUrl($url)
+    {
+        $this->setMerchantResponseURL($url);
+        return $this->setParameter("returnUrl", $url);
+    }
+    
+    public function getReturnUrl()
+    {
+        return $this->getParameter("returnUrl");
     }
 
     //TODO Add support for PAN Tokenization

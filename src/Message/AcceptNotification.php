@@ -16,12 +16,17 @@ implements \Omnipay\Common\Message\NotificationInterface
     
     public function sendData($data)
     {
-        return new ThreeDSResponse($this->getParameter("FacPwd"), $data, false);
+        return new ThreeDSResponse($this->getParameter("FacPwd"), $data, ((!$this->getParameter("FacPwd"))? false : true));
     }
     
     public function setFacPwd($value)
     {
         return $this->setParameter("FacPwd", $value);
+    }
+    
+    public function getFacPwd()
+    {
+        return $this->getParameter("FacPwd");
     }
     
     public function setMerID($value)

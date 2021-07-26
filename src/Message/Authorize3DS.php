@@ -12,6 +12,17 @@ class Authorize3DS extends Authorize
 
         return $this->data;
     }
+    
+    public function setReturnUrl($url)
+    {
+        $this->setParameter("returnUrl", $url);
+        return $this->setMerchantResponseURL($url);
+    }
+    
+    public function getReturnUrl()
+    {
+        return $this->getMerchantResponseURL();
+    }
 
     public function setMerchantResponseURL($url)
     {
