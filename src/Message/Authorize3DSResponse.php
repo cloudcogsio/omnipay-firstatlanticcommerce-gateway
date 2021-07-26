@@ -84,6 +84,7 @@ class Authorize3DSResponse extends AbstractResponse implements RedirectResponseI
     public function redirect()
     {
         parent::redirect();
+        exit;
     }
     
     public function getRedirectData()
