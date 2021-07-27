@@ -1,6 +1,26 @@
 <?php
+/**
+ * @author Ricardo Assing (ricardo@tsiana.ca)
+ */
+
 namespace Omnipay\FirstAtlanticCommerce\Message;
 
+/**
+ * Hosted Page Integration requires configuration on FAC's merchant portal.
+ * 
+ * Hosted Page Set and Hosted Page Name must be setup in FAC and configured when using the Hosted Page option for "authorize()" or "purchase()"
+ * 
+ *   setHostedPagePageSet($pageSet)
+ *   setHostedPageName($pageName)
+ * 
+ * Ex. 
+ * $HostedPagePreprocess = $gateway->purchase([Constants::AUTHORIZE_OPTION_HOSTED_PAGE => true];
+ * $HostedPagePreprocess
+ *  ->setHostedPagePageSet($pageSet)
+ *  ->setHostedPageName($pageName)
+ *  ->setCardHolderResponseURL($URL) // Page on the Merchant’s site that will process the response code returned and present a suitable message to the Cardholder
+ *  ->send();
+ */
 class HostedPagePreprocess extends Authorize
 {
     const MESSAGE_PART_CARDHOLDER_RESPONSE_URL = 'cardHolderResponseURL';

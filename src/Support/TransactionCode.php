@@ -1,6 +1,27 @@
 <?php
+/**
+ * @author Ricardo Assing (ricardo@tsiana.ca)
+ */
+
 namespace Omnipay\FirstAtlanticCommerce\Support;
 
+/**
+ * TransactionCode Class
+ * 
+ * Used to set various transaction codes during transaction setup.
+ * 
+ * @example
+ * 
+ * // Pass all codes as array
+ * $transactionCode = new TransactionCode([TransactionCode::AVS_CHECK]);
+ * 
+ * // Can add codes
+ * $transactionCode->addCode(TransactionCode::TOKEN_REQUEST);
+ * 
+ * // Set codes for transaction
+ * $gateway->authorize($options)->setTransactionCode($transactionCode);
+ * 
+ */
 class TransactionCode
 {
     const NONE = 0;

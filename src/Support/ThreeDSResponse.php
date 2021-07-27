@@ -1,17 +1,27 @@
 <?php
+/**
+ * @author Ricardo Assing (ricardo@tsiana.ca)
+ */
+
 namespace OmniPay\FirstAtlanticCommerce\Support;
 
 use Omnipay\FirstAtlanticCommerce\Constants;
 use Omnipay\FirstAtlanticCommerce\Exception\InvalidResponseData;
+use Omnipay\Common\Message\AbstractResponse;
 
-class ThreeDSResponse
+/**
+ * Response class returned to $gateway->acceptNotification()
+ * 
+ * Initially implemented here as a Support class but (should) be moved to /Message in future.
+ */
+class ThreeDSResponse extends AbstractResponse
 {
     const ROOT_ELEMENT = "ThreeDSAuthorizeResponse";
 
     protected $post;
     protected $XMLDoc;
 
-    public function __construct($FacPwd, array $post)
+    public function __construct($FacPwd, array $post, $verifySignature = true)
     {
         $this->post = $post;
         $this->FacPwd = $FacPwd;
@@ -20,7 +30,8 @@ class ThreeDSResponse
 
         if ($this->isSuccessful())
         {
-            $this->verifySignature();
+            if ($verifySignature)
+                $this->verifySignature();
         }
     }
 

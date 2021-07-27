@@ -1,4 +1,8 @@
 <?php
+/**
+ * @author Ricardo Assing (ricardo@tsiana.ca)
+ */
+
 namespace Omnipay\FirstAtlanticCommerce\Message;
 
 class Authorize3DS extends Authorize
@@ -11,6 +15,17 @@ class Authorize3DS extends Authorize
         $this->applyMerchantResponseURL();
 
         return $this->data;
+    }
+    
+    public function setReturnUrl($url)
+    {
+        $this->setParameter("returnUrl", $url);
+        return $this->setMerchantResponseURL($url);
+    }
+    
+    public function getReturnUrl()
+    {
+        return $this->getMerchantResponseURL();
     }
 
     public function setMerchantResponseURL($url)

@@ -1,4 +1,9 @@
 <?php
+/**
+ * @author Ricardo Assing (ricardo@tsiana.ca)
+ * 
+ * Some constants used within the project.
+ */
 namespace Omnipay\FirstAtlanticCommerce;
 
 class Constants
@@ -18,6 +23,7 @@ class Constants
     const CONFIG_KEY_FACCUR = 'facCurrencyList';
     const CONFIG_KEY_FACPGSET = 'facPageSet';
     const CONFIG_KEY_FACPGNAM = 'facPageName';
+    const CONFIG_KEY_MERCHANT_RESPONSE_URL = 'merchantResponseURL';
 
     const AUTHORIZE_OPTION_3DS = '3DS';
     const AUTHORIZE_OPTION_HOSTED_PAGE = 'HPA';
