@@ -3,3 +3,5 @@
 /.project
 /demo.php
 /.settings/
+/composer.lock
+/composer.phar
