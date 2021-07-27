@@ -1,4 +1,8 @@
 <?php
+/**
+ * @author Ricardo Assing (ricardo@tsiana.ca)
+ */
+
 namespace Omnipay\FirstAtlanticCommerce\Support;
 
 class FraudDetails extends AbstractSupport

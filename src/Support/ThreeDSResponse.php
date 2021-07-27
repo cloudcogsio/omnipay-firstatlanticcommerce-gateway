@@ -1,10 +1,19 @@
 <?php
+/**
+ * @author Ricardo Assing (ricardo@tsiana.ca)
+ */
+
 namespace OmniPay\FirstAtlanticCommerce\Support;
 
 use Omnipay\FirstAtlanticCommerce\Constants;
 use Omnipay\FirstAtlanticCommerce\Exception\InvalidResponseData;
 use Omnipay\Common\Message\AbstractResponse;
 
+/**
+ * Response class returned to $gateway->acceptNotification()
+ * 
+ * Initially implemented here as a Support class but (should) be moved to /Message in future.
+ */
 class ThreeDSResponse extends AbstractResponse
 {
     const ROOT_ELEMENT = "ThreeDSAuthorizeResponse";

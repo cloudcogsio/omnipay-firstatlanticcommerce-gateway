@@ -6,11 +6,15 @@ use Omnipay\Common\Message\RedirectResponseInterface;
 
 class Authorize3DSResponse extends AbstractResponse implements RedirectResponseInterface
 {
+    /**
+     * Returns false since transaction has not been processed at this point.
+     * Implementations should call $this->redirect() to start off the 3DS flow using the form returned by FAC.
+     * 
+     * {@inheritDoc}
+     * @see \Omnipay\Common\Message\ResponseInterface::isSuccessful()
+     */
     public function isSuccessful()
     {
-        // Should return false if it's a redirect?
-        //if ($this->getCode() === "00") return true;
-
         return false;
     }
 
@@ -41,7 +45,7 @@ class Authorize3DSResponse extends AbstractResponse implements RedirectResponseI
 
     /**
      * To be removed. 
-     * Use redirect method instead.
+     * Use redirect() method instead.
      * 
      * @deprecated
      */

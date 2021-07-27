@@ -1,4 +1,8 @@
 <?php
+/**
+ * @author Ricardo Assing (ricardo@tsiana.ca)
+ */
+
 namespace Omnipay\FirstAtlanticCommerce\Message;
 
 use Omnipay\FirstAtlanticCommerce\Exception\InvalidResponseData;

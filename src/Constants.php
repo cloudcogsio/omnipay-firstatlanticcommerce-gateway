@@ -1,4 +1,9 @@
 <?php
+/**
+ * @author Ricardo Assing (ricardo@tsiana.ca)
+ * 
+ * Some constants used within the project.
+ */
 namespace Omnipay\FirstAtlanticCommerce;
 
 class Constants

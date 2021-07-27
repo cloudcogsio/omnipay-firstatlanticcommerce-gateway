@@ -1,6 +1,9 @@
 <?php
-namespace Omnipay\FirstAtlanticCommerce\Message;
+/**
+ * @author Ricardo Assing (ricardo@tsiana.ca)
+ */
 
+namespace Omnipay\FirstAtlanticCommerce\Message;
 
 use Omnipay\FirstAtlanticCommerce\Constants;
 use Omnipay\FirstAtlanticCommerce\Support\TransactionCode;
