@@ -34,7 +34,6 @@ chdir(dirname(realpath(__DIR__)));
  *      'amount' => 'xxx.xx',
  *      'currency' => 'USD',
  *      'card' => $cardData,
- *      'merchantResponseURL' => $MerchantResponseURL, 
  *      'transactionId' => 'xxxxxx'
  *  ];
  *  
