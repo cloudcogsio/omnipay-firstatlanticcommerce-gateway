@@ -121,11 +121,8 @@ implements \Omnipay\FirstAtlanticCommerce\Support\FACParametersInterface
 
                 return $this->response = new $responseClassName($this, $responseXML);
 
-                break;
-
             default:
                 throw new GatewayHTTPException($httpResponse->getReasonPhrase(), $httpResponse->getStatusCode());
-                break;
         }
     }
 
@@ -310,5 +307,17 @@ implements \Omnipay\FirstAtlanticCommerce\Support\FACParametersInterface
     public function getCacheRequest()
     {
         return $this->getParameter(AbstractRequest::PARAM_CACHE_REQUEST);
+    }
+
+    /**
+     * Override parent method to ensure returned value is 3 digit string. (Required by FAC).
+     * @return string|null
+     */
+    public function getCurrencyNumeric()
+    {
+        $currency = parent::getCurrencyNumeric();
+        if (is_string($currency) && strlen($currency) == 2) return "0".$currency;
+
+        return $currency;
     }
 }

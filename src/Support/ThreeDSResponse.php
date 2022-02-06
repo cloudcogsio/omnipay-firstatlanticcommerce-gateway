@@ -140,7 +140,7 @@ class ThreeDSResponse extends AbstractResponse
         $FACSignature= $this->getSignature();
         $ValidatedSignature = base64_encode(sha1($this->FacPwd.$this->getMerID().$this->getAcqID().$this->getOrderID(),true));
         if ($FACSignature !== $ValidatedSignature)
-            throw new InvalidResponseData("Signature mismatch");
+            throw new InvalidResponseData("Signature mismatch. Expected: ".$ValidatedSignature);
 
             return $this;
     }
