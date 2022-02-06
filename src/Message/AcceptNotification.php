@@ -5,10 +5,8 @@
 
 namespace Omnipay\FirstAtlanticCommerce\Message;
 
-require dirname(__DIR__).'/Support/ThreeDSResponse.php';
-
 use Omnipay\Common\Message\AbstractRequest;
-use OmniPay\FirstAtlanticCommerce\Support\ThreeDSResponse;
+use Omnipay\FirstAtlanticCommerce\Support\ThreeDSResponse;
 
 class AcceptNotification extends AbstractRequest
 implements \Omnipay\Common\Message\NotificationInterface

@@ -3,7 +3,7 @@
  * @author Ricardo Assing (ricardo@tsiana.ca)
  */
 
-namespace OmniPay\FirstAtlanticCommerce\Support;
+namespace Omnipay\FirstAtlanticCommerce\Support;
 
 use Omnipay\FirstAtlanticCommerce\Constants;
 use Omnipay\FirstAtlanticCommerce\Exception\InvalidResponseData;
