@@ -21,10 +21,14 @@ return [
      * @example 
      * $gateway->setTestMode = true;
      */
+
     'testMode'                          => false,
     Constants::AUTHORIZE_OPTION_3DS     => true, // Default 3DS transactions
     Constants::CONFIG_KEY_FACID         => '', // First Atlantic Commerce ID
     Constants::CONFIG_KEY_FACPWD        => '', // First Atlantic Commerce Processing Password
+
+    Constants::GATEWAY_ORDER_NUMBER_PREFIX => '', // Prefix for OrderNumber sent to FAC.
+    Constants::GATEWAY_ORDER_NUMBER_AUTOGEN => true, // Set to true to have the gateway generate order numbers if none is supplied for a transaction.
     
     /*
      * Always the same. 

@@ -320,4 +320,24 @@ implements \Omnipay\FirstAtlanticCommerce\Support\FACParametersInterface
 
         return $currency;
     }
+
+    public function setOrderNumberPrefix($value)
+    {
+        return $this->setParameter(Constants::GATEWAY_ORDER_NUMBER_PREFIX, $value);
+    }
+
+    public function getOrderNumberPrefix()
+    {
+        return $this->getParameter(Constants::GATEWAY_ORDER_NUMBER_PREFIX);
+    }
+
+    public function setOrderNumberAutoGen($value)
+    {
+        return $this->setParameter(Constants::GATEWAY_ORDER_NUMBER_AUTOGEN, $value);
+    }
+
+    public function getOrderNumberAutoGen()
+    {
+        return $this->getParameter(Constants::GATEWAY_ORDER_NUMBER_AUTOGEN);
+    }
 }

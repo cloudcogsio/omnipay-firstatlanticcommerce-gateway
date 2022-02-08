@@ -31,4 +31,6 @@ class Constants
     const GATEWAY_INTEGRATION_DIRECT = 'direct';
     const GATEWAY_INTEGRATION_HOSTED = 'hosted';
     const GATEWAY_CONFIG_KEY_INTEGRATION = 'integrationOption';
+    const GATEWAY_ORDER_NUMBER_PREFIX = 'orderNumberPrefix';
+    const GATEWAY_ORDER_NUMBER_AUTOGEN = 'orderNumberAutoGen';
 }
