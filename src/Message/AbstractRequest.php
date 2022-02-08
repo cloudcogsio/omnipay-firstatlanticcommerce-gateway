@@ -333,6 +333,9 @@ implements \Omnipay\FirstAtlanticCommerce\Support\FACParametersInterface
 
         if (!empty($orderNumberPrefix) && !empty($transactionId)) $transactionId = $orderNumberPrefix.$transactionId;
 
+        $this->setTransactionId($transactionId);
+        $this->setOrderNumberPrefix('');
+
         return $transactionId;
     }
 
