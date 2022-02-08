@@ -321,6 +321,21 @@ implements \Omnipay\FirstAtlanticCommerce\Support\FACParametersInterface
         return $currency;
     }
 
+    public function getTransactionId()
+    {
+        $transactionId = parent::getTransactionId();
+        $orderNumberPrefix = $this->getOrderNumberPrefix();
+
+        if (empty($transactionId) && $this->getOrderNumberAutoGen() === true)
+        {
+            $transactionId = microtime(true);
+        }
+
+        if (!empty($orderNumberPrefix) && !empty($transactionId)) $transactionId = $orderNumberPrefix.$transactionId;
+
+        return $transactionId;
+    }
+
     public function setOrderNumberPrefix($value)
     {
         return $this->setParameter(Constants::GATEWAY_ORDER_NUMBER_PREFIX, $value);

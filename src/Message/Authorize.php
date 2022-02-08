@@ -119,18 +119,7 @@ class Authorize extends AbstractRequest
         $container = [];
         $container[self::PARAM_ACQUIRERID] = $this->getFacAcquirer();
         $container[self::PARAM_MERCHANTID] = $this->getFacId();
-
-        $transactionId = $this->getTransactionId();
-        $orderNumberPrefix = $this->getOrderNumberPrefix();
-
-        if (empty($transactionId) && $this->getOrderNumberAutoGen() === true)
-        {
-            $transactionId = microtime(true);
-        }
-
-        if (!empty($orderNumberPrefix) && !empty($transactionId)) $transactionId = $orderNumberPrefix.$transactionId;
-
-        $container[self::PARAM_ORDERNUMBER] = $transactionId;
+        $container[self::PARAM_ORDERNUMBER] = $this->getTransactionId();
 
         return $container;
     }
