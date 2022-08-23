@@ -17,7 +17,7 @@ class Authorize extends AbstractRequest
     const MESSAGE_PART_SHIPPING_DETAILS = "ShippingDetails";
     const MESSAGE_PART_3DS_DETAILS = "ThreeDSecureDetails";
     const MESSAGE_PART_RECURRING_DETAILS = "RecurringDetails";
-    const MESSAHE_PART_FRAUD_DETAILS = "FraudDetails";
+    const MESSAGE_PART_FRAUD_DETAILS = "FraudDetails";
 
     const PARAM_SIGNATURE = 'Signature';
     const PARAM_ACQUIRERID = 'AcquirerId';
