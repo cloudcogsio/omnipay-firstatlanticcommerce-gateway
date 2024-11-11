@@ -83,7 +83,7 @@ implements \Omnipay\FirstAtlanticCommerce\Support\FACParametersInterface
      */
     public function setMerchantResponseURL($url)
     {
-        return $this->setParameter(Constants::CONFIG_KEY_MERCHANT_RESPONSE_URL, $url);
+        return $this->setReturnUrl($url);
     }
     
     /**
@@ -247,7 +247,7 @@ implements \Omnipay\FirstAtlanticCommerce\Support\FACParametersInterface
      */
     public function setReturnUrl($url)
     {
-        $this->setMerchantResponseURL($url);
+        $this->setParameter(Constants::CONFIG_KEY_MERCHANT_RESPONSE_URL, $url);
         return $this->setParameter("returnUrl", $url);
     }
     
